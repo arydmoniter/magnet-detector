@@ -1,16 +1,6 @@
-pins.digitalWritePin(DigitalPin.P1, 0)
 basic.forever(function () {
     if (pins.digitalReadPin(DigitalPin.P0) == 0) {
-        pins.digitalWritePin(DigitalPin.P1, 1)
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(1000)
-        pins.digitalWritePin(DigitalPin.P1, 0)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
         basic.pause(1000)
     }
 })
